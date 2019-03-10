@@ -1,0 +1,25 @@
+namespace ie.cit.pkddacoliat.participant
+
+import ie.cit.pkddacoliat.grades.Grades
+
+abstract participant CITParticipant identified by participantKey {
+  o String participantKey
+  o Contact contact
+}
+
+concept Contact {
+  o String fName
+  o String lName
+  o String email
+}
+
+participant CITStudent extends CITParticipant {
+  o String studentNumber
+  --> Grades[] grades
+  o Boolean graduated default=false
+}
+
+participant CITLecturer extends CITParticipant{
+  o String lecturerNo
+}
+
