@@ -1,0 +1,27 @@
+namespace ie.cit.pkddacoliat.module
+
+asset Module identified by moduleId {
+  o String moduleId
+  o Integer crn
+  o String subject
+  o Integer course
+  o String section
+  o String title
+  o Double credits
+  o Level Level
+  o Component[] components
+}
+
+enum Level {
+  o Fundamental
+  o Advanced
+}
+
+concept Component {
+  o String title
+  o Double score        range = [0.00, 100.00]
+  o Double percentage   range = [0.00, 100.00]
+  o Double letterGrade  range = [0.00, 100.00]
+  o Boolean mustPass    default = false
+  o Double weight       range = [0.00, 100.00]
+}
