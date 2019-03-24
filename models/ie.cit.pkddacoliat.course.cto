@@ -31,3 +31,15 @@ enum DeliveryMode {
   o PartTime
   o FullTime
 }
+
+transaction CreateCourse {
+  o String courseCode           
+  o String courseTitle
+  o String fieldOfStudy
+  o CourseType courseType
+  o QualificationType qualificationType
+  o DeliveryMode deliveryMode
+  o Integer noOfSemesters 
+  o Integer totalCredits
+  o Integer NFQLevel
+}

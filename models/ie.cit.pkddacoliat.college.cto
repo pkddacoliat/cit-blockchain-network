@@ -6,3 +6,9 @@ asset College identified by collegeId {
   o String campus
   o String department
 }
+
+transaction CreateCollege {
+  o String collegeName
+  o String campus
+  o String department
+}

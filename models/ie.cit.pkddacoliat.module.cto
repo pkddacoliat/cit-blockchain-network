@@ -25,3 +25,12 @@ concept Component {
   o Boolean mustPass    default = false
   o Double weight       range = [0.00, 100.00]
 }
+
+transaction CreateModule {
+  o Integer crn
+  o String subject
+  o Integer course
+  o String section
+  o String title
+  o Double credits
+}
