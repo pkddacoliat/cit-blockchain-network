@@ -1,5 +1,6 @@
 namespace ie.cit.pkddacoliat.participant
 
+import ie.cit.pkddacoliat.college.College
 import ie.cit.pkddacoliat.course.Course
 import ie.cit.pkddacoliat.grade.Grade
 
@@ -16,8 +17,11 @@ concept Contact {
 
 participant CITStudent extends CITParticipant {
   o String studentNumber
+  --> College college
   --> Course course
   --> Grade[] grades
+  o String admitTerm
+  o String admitType  // Possible to add enum
   o Boolean graduated default=false
 }
 
