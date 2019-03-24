@@ -1,0 +1,8 @@
+namespace ie.cit.pkddacoliat.college
+
+asset College identified by collegeId {
+  o String collegeId
+  o String collegeName
+  o String campus
+  o String department
+}
