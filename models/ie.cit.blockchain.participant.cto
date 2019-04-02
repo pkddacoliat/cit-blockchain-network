@@ -1,0 +1,26 @@
+namespace ie.cit.blockchain.participant
+
+import ie.cit.blockchain.grade.Grade
+
+abstract participant CITParticipant identified by participantNo {
+  o String participantNo
+  o Contact contact
+}
+
+concept Contact {
+  o String firstName
+  o String lastName
+  o String email
+}
+
+participant CITStudent extends CITParticipant {
+  --> Grade[] grades
+  o Double currentCredits
+  o Boolean graduated   default = false
+}
+
+participant CITLecturer extends CITParticipant {
+}
+
+participant Verifier extends CITParticipant {
+}

@@ -1,0 +1,32 @@
+namespace ie.cit.blockchain.course
+
+asset Course identified by courseCode {
+  o String courseCode
+  o String courseTitle
+  o String[] fieldOfStudy
+  o CourseType courseType
+  o QualificationType qualificationType
+  o DeliveryMode deliveryMode
+  o Integer noOfSemesters   range = [2, 8]
+  o Integer totalCredits    range = [60, 240]
+  o Integer NFQLevel        range = [6, 8]
+}
+
+enum CourseType {
+  o CERTIFICATE
+  o HIGHER_CERTIFICATE
+  o HIGHER_CERTIFICATE_BSC
+  o HONOURS_DEGREE
+}
+
+enum QualificationType {
+  o SPECIAL_AWARD
+  o HIGHER_CERTIFICATE
+  o BSC
+  o BSC_HONOURS  
+}
+
+enum DeliveryMode {
+  o PART_TIME
+  o FULL_TIME
+}

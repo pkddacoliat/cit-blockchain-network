@@ -1,0 +1,14 @@
+namespace ie.cit.blockchain.module
+
+asset Module identified by crn {
+  o String crn
+  o String moduleCode
+  o String title
+  o Double credits
+  o Level Level
+}
+
+enum Level {
+  o FUNDAMENTAL
+  o ADVANCED
+}
