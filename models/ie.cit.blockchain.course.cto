@@ -30,3 +30,7 @@ enum DeliveryMode {
   o PART_TIME
   o FULL_TIME
 }
+
+transaction createCourse {
+  o Course course
+}

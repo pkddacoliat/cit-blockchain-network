@@ -8,8 +8,3 @@ asset Grade identified by gradeId {
   --> Module module
   o Double finalGrade   range = [0.00, 100.00]
 }
-
-transaction addGrade {
-  --> Grade grade
-  --> CITStudent student
-}
