@@ -3,7 +3,7 @@
     "composer": "^0.20.7"
   },
   "name": "fyp_bna",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Business network application (BNA) for final year project.",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/fyp_bna.bna",
