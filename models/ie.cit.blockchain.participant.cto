@@ -1,6 +1,7 @@
 namespace ie.cit.blockchain.participant
 
 import ie.cit.blockchain.grade.Grade
+import ie.cit.blockchain.course.Course
 
 abstract participant CITParticipant identified by participantNo {
   o String participantNo
@@ -14,12 +15,12 @@ concept Contact {
 }
 
 participant CITStudent extends CITParticipant {
+  --> Course course
   --> Grade[] grades
+  o String admitTerm
+  o String college
   o Double currentCredits
   o Boolean graduated   default = false
-}
-
-participant CITLecturer extends CITParticipant {
 }
 
 participant Verifier extends CITParticipant {
