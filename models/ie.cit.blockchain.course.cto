@@ -1,5 +1,7 @@
 namespace ie.cit.blockchain.course
 
+import ie.cit.blockchain.participant.CITStudent
+
 asset Course identified by courseCode {
   o String courseCode
   o String courseTitle
@@ -29,4 +31,9 @@ enum QualificationType {
 enum DeliveryMode {
   o PART_TIME
   o FULL_TIME
+}
+
+transaction EnrollStudent {
+  o String courseCode
+  o String studentNumber
 }

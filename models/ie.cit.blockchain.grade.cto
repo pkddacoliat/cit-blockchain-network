@@ -6,10 +6,12 @@ import ie.cit.blockchain.participant.CITStudent
 asset Grade identified by gradeId {
   o String gradeId
   --> Module module
-  o Double finalGrade   range = [0.00, 100.00]
+  --> CITStudent student
+  o Double finalGrade   	range = [0.00, 100.00]
 }
 
 transaction AssignGrade {
-  --> Grade grade
-  --> CITStudent student
+  o String moduleCRN
+  o String studentNumber
+  o Double finalGrade	range = [0.00, 100.00]
 }

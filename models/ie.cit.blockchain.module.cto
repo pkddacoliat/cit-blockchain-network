@@ -6,6 +6,8 @@ asset Module identified by crn {
   o String title
   o Double credits
   o Level Level
+  o Integer stage		range = [1, 4]
+  o Integer semester	range = [1, 8]
 }
 
 enum Level {

@@ -15,13 +15,14 @@ concept Contact {
 }
 
 participant CITStudent extends CITParticipant {
-  --> Course course
-  --> Grade[] grades
-  o String admitTerm
-  o String college
-  o Double currentCredits
-  o Boolean graduated   default = false
+  --> Course course			optional
+  --> Grade[] grades		optional
+  o String admitTerm		optional
+  o String college			optional
+  o Double currentCredits 	optional
+  o Boolean graduated   	default = false
 }
 
 participant Verifier extends CITParticipant {
+  o String organization
 }
