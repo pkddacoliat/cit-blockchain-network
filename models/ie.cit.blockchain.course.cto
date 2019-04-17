@@ -1,7 +1,5 @@
 namespace ie.cit.blockchain.course
 
-import ie.cit.blockchain.participant.CITStudent
-
 asset Course identified by courseCode {
   o String courseCode
   o String courseTitle
