@@ -4,6 +4,7 @@ asset Course identified by courseCode {
   o String courseCode
   o String courseTitle
   o String[] fieldOfStudy
+  o String department
   o CourseType courseType
   o QualificationType qualificationType
   o DeliveryMode deliveryMode
