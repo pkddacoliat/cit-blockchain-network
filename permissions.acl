@@ -37,7 +37,7 @@ rule Default {
 }
 
 rule StudentGrades {
-	description: "Grant students READ access to their own grades"
+  description: "Grant students READ access to their own grades"
   participant(p): "ie.cit.blockchain.participant.Student"
   operation: READ
   resource(r): "ie.cit.blockchain.grade.Grade"
@@ -55,7 +55,7 @@ rule StudentProfile {
 }
 
 rule StudentCourse {
-	description: "Grant students READ access to their course profile"
+  description: "Grant students READ access to their course profile"
   participant(p): "ie.cit.blockchain.participant.Student"
   operation: READ
   resource(r): "ie.cit.blockchain.course.Course"
