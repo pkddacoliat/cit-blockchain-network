@@ -13,17 +13,52 @@
  */
 
 rule NetworkAdminUser {
-    description: "Grant business network administrators full access to user resources"
-    participant: "org.hyperledger.composer.system.NetworkAdmin"
-    operation: ALL
-    resource: "**"
-    action: ALLOW
+  description: "Grant business network administrators full access to user resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "**"
+  action: ALLOW
 }
 
 rule NetworkAdminSystem {
-    description: "Grant business network administrators full access to system resources"
-    participant: "org.hyperledger.composer.system.NetworkAdmin"
-    operation: ALL
-    resource: "org.hyperledger.composer.system.**"
-    action: ALLOW
+  description: "Grant business network administrators full access to system resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+rule Default {
+  description: "Grant ALL access by default"
+  participant: "ANY"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
+rule StudentGrades {
+	description: "Grant students READ access to their own grades"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.grade.Grade"
+  condition: (r.student.getIdentifier() == p.getIdentifier())
+  action: ALLOW
+}
+
+rule StudentProfile {
+  description: "Grant students READ access to their profile"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.participant.Student"
+  condition: (r.getIdentifier() == p.getIdentifier())
+  action: ALLOW
+}
+
+rule StudentCourse {
+	description: "Grant students READ access to their course profile"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.course.Course"
+  condition: (r.getIdentifier() == p.course.getIdentifier())
+  action: ALLOW
 }
