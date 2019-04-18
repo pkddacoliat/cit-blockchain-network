@@ -62,3 +62,44 @@ rule StudentCourse {
   condition: (r.getIdentifier() == p.course.getIdentifier())
   action: ALLOW
 }
+
+rule VerifierStudents {
+  description: "Grant verifiers READ access to the students"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.participant.Student"
+  action: ALLOW
+}
+
+rule VerifierGrades {
+  description: "Grant verifiers READ access to the grades"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.grade.Grade"
+  action: ALLOW
+}
+
+rule VerifierCourses {
+  description: "Grant verifiers READ access to the courses"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.course.Course"
+  action: ALLOW
+}
+
+rule VerifierModules {
+  description: "Grant verifiers READ access to the modules"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.module.Module"
+  action: ALLOW
+}
+
+rule VerifierProfile {
+  description: "Grant verifier READ access to their profile"
+  participant(p): "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource(r): "ie.cit.blockchain.participant.Verifier"
+  condition: (r.getIdentifier() == p.getIdentifier())
+  action: ALLOW
+}
