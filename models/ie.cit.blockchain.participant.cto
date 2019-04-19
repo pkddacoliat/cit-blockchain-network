@@ -23,11 +23,11 @@ participant Student extends CITParticipant {
   o Boolean graduated   	optional
 }
 
+participant Verifier extends CITParticipant {
+  o String organization
+}
+
 participant Issuer identified by collegeId {
   o String collegeId
   o String collegeName
-}
-
-participant Verifier extends CITParticipant {
-  o String organization
 }
