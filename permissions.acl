@@ -12,6 +12,8 @@
  * limitations under the License.
  */
 
+/*** Network Admin Permissions ***/
+
 rule NetworkAdminUser {
   description: "Grant business network administrators full access to user resources"
   participant: "org.hyperledger.composer.system.NetworkAdmin"
@@ -28,6 +30,8 @@ rule NetworkAdminSystem {
   action: ALLOW
 }
 
+/*** Default: Required for all participants ***/
+
 rule Default {
   description: "Grant ALL access by default"
   participant: "ANY"
@@ -35,6 +39,8 @@ rule Default {
   resource: "org.hyperledger.composer.system.**"
   action: ALLOW
 }
+
+/*** Student Permissions ***/
 
 rule StudentGrades {
   description: "Grant students READ access to their own grades"
@@ -55,13 +61,30 @@ rule StudentProfile {
 }
 
 rule StudentCourse {
-  description: "Grant students READ access to their course profile"
-  participant(p): "ie.cit.blockchain.participant.Student"
+  description: "Grant students READ access to the courses"
+  participant: "ie.cit.blockchain.participant.Student"
   operation: READ
-  resource(r): "ie.cit.blockchain.course.Course"
-  condition: (r.getIdentifier() == p.course.getIdentifier())
+  resource: "ie.cit.blockchain.course.Course"
   action: ALLOW
 }
+
+rule StudentModule {
+  description: "Grant students READ access to the modules"
+  participant: "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource: "ie.cit.blockchain.module.Module"
+  action: ALLOW
+}
+
+rule StudentIssuer {
+  description: "Grant students READ access to the issuer registry"
+  participant: "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource: "ie.cit.blockchain.participant.Issuer"
+  action: ALLOW
+}
+
+/*** Verifier Permissions ***/
 
 rule VerifierStudents {
   description: "Grant verifiers READ access to the students"
@@ -103,3 +126,29 @@ rule VerifierProfile {
   condition: (r.getIdentifier() == p.getIdentifier())
   action: ALLOW
 }
+
+rule VerifierIssuer {
+  description: "Grant verifier READ access to the issuer registry"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.participant.Issuer"
+  action: ALLOW
+}
+
+rule VerifierAssignGrade {
+  description: "Grant verifier READ access to the AssignGrade transactions"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.grade.AssignGrade"
+  action: ALLOW
+}
+
+rule VerifierEnrollStudent {
+  description: "Grant verifier READ access to the EnrollStudent transactions"
+  participant: "ie.cit.blockchain.participant.Verifier"
+  operation: READ
+  resource: "ie.cit.blockchain.course.EnrollStudent"
+  action: ALLOW
+}
+
+/*** Issuer Permissions ***/
