@@ -2,6 +2,8 @@
 
 This repository contains the business definitions (i.e. model files, permissions, chaincode, and query) for the private blockchain network for my final year project.
 
+Link to the tasks list: [TODO.md](TODO.md)
+
 ## Business Model
 The models defined in the BNA are the following:
 - Participants

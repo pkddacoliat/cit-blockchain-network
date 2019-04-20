@@ -7,3 +7,6 @@
 - [x] Admin can assign a grade to a student
 - [x] Enrolling a student initialises following properties: college, course, grades, currentCredits, and graduated.
 - [x] Assigning a grade to a student creates a new grade asset with four properties: the gradeId, moduleCRN, studentNumber, and the finalGrade.
+
+
+Go back to the main [README](README.md) file.
