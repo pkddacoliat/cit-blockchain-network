@@ -2,11 +2,11 @@
   "engines": {
     "composer": "^0.20.7"
   },
-  "name": "fyp_bna",
+  "name": "cit_blockchain",
   "version": "0.0.1",
   "description": "Business network application (BNA) for final year project.",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/fyp_bna.bna",
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/cit_blockchain.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"

@@ -1,0 +1,17 @@
+namespace ie.cit.blockchain.grade
+
+import ie.cit.blockchain.module.Module
+import ie.cit.blockchain.participant.Student
+
+asset Grade identified by gradeId {
+  o String gradeId
+  --> Module module
+  --> Student student
+  o Double finalGrade   	range = [0.00, 100.00]
+}
+
+transaction AssignGrade {
+  o String moduleCRN
+  o String studentNumber
+  o Double finalGrade		  range = [0.00, 100.00]
+}
