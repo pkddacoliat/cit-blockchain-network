@@ -2,14 +2,6 @@
 
 This repository contains the business definitions (i.e. model files, permissions, chaincode, and query) for the private blockchain network for my final year project.
 
-## TODO
-- [x] Admin can add a student 
-- [x] Admin can add a verifier
-- [x] Admin can add a course
-- [x] Admin can add a module
-- [x] Admin can enroll a student
-- [x] Admin can assign a grade to a student
-
 ## Business Model
 The models defined in the BNA are the following:
 - Participants
