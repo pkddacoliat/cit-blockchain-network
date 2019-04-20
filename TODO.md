@@ -13,7 +13,7 @@
 - [x] Assigning a grade to a student creates a new grade asset with four properties: the gradeId, moduleCRN which links to a module, studentNumber which links to a student, and the finalGrade.
 - [x] Assigning a grade to a student adds the grade to their array of grades.
 - [x] Assigning a grade to a student adds the credits for the module to their current credits.
-- [ ] After assigning a grade to a student, check the current credits against the number of total credits in the course. If they match, change the boolean value graduated to TRUE to represent that student successfully finished the course.
+- [x] After assigning a grade to a student, check the current credits against the number of total credits in the course. If they match, change the boolean value graduated to TRUE to represent that student successfully finished the course.
 
 ### Student
 - [x] Student can READ their own information stored in the student registry.
