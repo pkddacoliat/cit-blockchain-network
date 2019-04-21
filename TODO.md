@@ -33,7 +33,13 @@
 - [x] Verifier can READ AssignGrade transactions.
 
 ### Queries
-
-
+- [ ] SELECT all students.
+- [ ] SELECT a student based on the student number.
+- [ ] SELECT all courses.
+- [ ] SELECT a course based on the course code.
+- [ ] SELECT all modules.
+- [ ] SELECT a module based on the module CRN.
+- [ ] SELECT all grades based on the student number.
+- [ ] SELECT all grades of a student on a given stage.
 
 Go back to the main [README](README.md) file.
