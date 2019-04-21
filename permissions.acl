@@ -84,11 +84,20 @@ rule StudentIssuer {
   action: ALLOW
 }
 
-rule StudentASsignGrade {
+rule StudentAssignGrade {
   description: "Grant students READ access to AssignGrade transactions related to them"
   participant(p): "ie.cit.blockchain.participant.Student"
   operation: READ
   resource(r): "ie.cit.blockchain.grade.AssignGrade"
+  condition: (p.getIdentifier() == r.studentNumber)
+  action: ALLOW
+}
+
+rule StudentEnrollment {
+  description: "Grant students READ access to the enrollment transaction related to them"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.course.EnrollStudent"
   condition: (p.getIdentifier() == r.studentNumber)
   action: ALLOW
 }

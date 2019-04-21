@@ -20,8 +20,8 @@
 - [x] Student can READ their own grades stored in the grade registry.
 - [x] Student can READ the courses stored in the course registry.
 - [x] Student can READ the modules stored in the module registry.
-- [ ] Student can READ EnrollStudent transaction related to them.
-- [ ] Student can READ AssignGrade transactions related to them.
+- [x] Student can READ EnrollStudent transaction related to them.
+- [x] Student can READ AssignGrade transactions related to them.
 
 ### Verifier
 - [x] Verifier can READ the students stored in the student registry.
