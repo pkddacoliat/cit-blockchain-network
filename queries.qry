@@ -1,0 +1,56 @@
+/**
+ * Queries for the CIT blockchain network.
+ */
+
+query selectAllStudents {
+  description: "Select all students"
+  statement:
+  	SELECT ie.cit.blockchain.participant.Student
+}
+
+query selectStudentByStudentNumber {
+  description: "Select a student based on the student number"
+  statement:
+  	SELECT ie.cit.blockchain.participant.Student
+  		WHERE (participantNo == _$studentNumber)
+}
+
+query selectAllCourses {
+  description: "Select all courses"
+  statement:
+  	SELECT ie.cit.blockchain.course.Course
+}
+
+query selectCourseByCode {
+  description: "Select a course based on the course code"
+  statement:
+  	SELECT ie.cit.blockchain.course.Course
+  	  WHERE (courseCode == _$courseCode)
+}
+
+query selectAllModules {
+  description: "Select all modules"
+  statement:
+    SELECT ie.cit.blockchain.module.Module
+}
+
+query selectModuleByCRN {
+  description: "Select a module based on the module CRN"
+  statement:
+    SELECT ie.cit.blockchain.module.Module
+      WHERE (crn == _$crn)
+}
+
+query selectGradesByStudent {
+  description: "Select all the grades assigned to a student"
+  statement:
+    SELECT ie.cit.blockchain.grade.Grade
+      WHERE (student == _$studentNumber)
+}
+
+query selectGradesByStudentOnStage {
+  description: "Select all the grades assigned to a student by stage"
+  statement:
+    SELECT ie.cit.blockchain.grade.Grade
+      WHERE ((student == _$studentNumber) AND (module.stage == _$stage))
+}

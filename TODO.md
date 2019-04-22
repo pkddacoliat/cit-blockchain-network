@@ -33,12 +33,12 @@
 - [x] Verifier can READ AssignGrade transactions.
 
 ### Queries
-- [ ] SELECT all students.
-- [ ] SELECT a student based on the student number.
-- [ ] SELECT all courses.
-- [ ] SELECT a course based on the course code.
-- [ ] SELECT all modules.
-- [ ] SELECT a module based on the module CRN.
+- [x] SELECT all students.
+- [x] SELECT a student based on the student number.
+- [x] SELECT all courses.
+- [x] SELECT a course based on the course code.
+- [x] SELECT all modules.
+- [x] SELECT a module based on the module CRN.
 - [ ] SELECT all grades based on the student number.
 - [ ] SELECT all grades of a student on a given stage.
 
