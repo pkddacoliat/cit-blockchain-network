@@ -119,7 +119,7 @@ composer network ping -c admin@cit_blockchain
 ```
 
 ## 4. Generate REST server
-To generate the REST server that invokes the assets and transactions in the business network, use the `composer-rest-server` command:
+To generate the REST server that invokes the assets and transactions in the business network, use the `composer-rest-server` command below to run the REST server using port 5000 (feel free to change the port number):
 ```sh
-composer-rest-server -c admin@cit_blockchain -n always -w true
+composer-rest-server -c admin@cit_blockchain -n always -w true -p 5000
 ```
