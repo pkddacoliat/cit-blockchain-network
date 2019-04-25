@@ -14,6 +14,7 @@
 - [x] Assigning a grade to a student adds the grade to their array of grades.
 - [x] Assigning a grade to a student adds the credits for the module to their current credits.
 - [x] After assigning a grade to a student, check the current credits against the number of total credits in the course. If they match, change the boolean value graduated to TRUE to represent that student successfully finished the course.
+- [ ] Add a trace concept to the grade to record the transactionId, timestamp, and a boolean value that indicate if the grade is a pass or not.
 
 ### Student
 - [x] Student can READ their own information stored in the student registry.
