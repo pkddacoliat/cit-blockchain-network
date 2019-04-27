@@ -1,6 +1,6 @@
-# FYP - Business Network Application (BNA)
+# CIT Private Blockchain Network
 
-This repository contains the business definitions (i.e. model files, permissions, chaincode, and query) for the private blockchain network for my final year project.
+This repository contains the business model for the private blockchain network based on an academic institution like Cork Institute of Technology (CIT). The business network created on this repo can be used to store academic records of a student.
 
 Link to the tasks list: [TODO.md](TODO.md)
 
@@ -16,8 +16,8 @@ The models defined in the BNA are the following:
 ## 1. Clone the repo
 Clone the repo locally. Using a terminal, run the commands below:
 ```sh
-git clone https://github.com/pkddacoliat/fyp-bna.git
-cd fyp-bna
+git clone https://github.com/pkddacoliat/cit-blockchain-network.git
+cd cit-blockchain-network
 ```
 
 ## 2. Generate the business archive file
@@ -44,8 +44,8 @@ Create a `Student` participant:
     "email": "John.Doe@mycit.ie"
   }
 }
-```
 
+```
 Create a `Course` asset:
 ```json
 {
@@ -61,6 +61,7 @@ Create a `Course` asset:
   "totalCredits": 240,
   "NFQLevel": 8
 }
+
 ```
 Create a `Module` asset:
 ```json
@@ -100,26 +101,26 @@ To deploy the business network archive to the Hyperledger Fabric, use the follow
 
 Install the business network:
 ```sh
-composer network install -a cit_blockchain.bna -c PeerAdmin@hlfv1
+composer network install -a cit-blockchain-network.bna -c PeerAdmin@hlfv1
 ```
 
 Start the business network:
 ```sh
-composer network start -c PeerAdmin@hlfv1 -n cit_blockchain -V 0.0.1 -A admin -S adminpw
+composer network start -c PeerAdmin@hlfv1 -n cit-blockchain-network -V 0.0.1 -A admin -S adminpw
 ```
 
 A network administrator card should be generated in the `dist` folder. Import the card to the network:
 ```sh
-composer card import -f admin@cit_blockchain.card 
+composer card import -f admin@cit-blockchain-network.card 
 ```
 
 Check that the business network has been deployed successfully by using the ping command:
 ```sh
-composer network ping -c admin@cit_blockchain
+composer network ping -c admin@cit-blockchain-network
 ```
 
 ## 4. Generate REST server
-To generate the REST server that invokes the assets and transactions in the business network, use the `composer-rest-server` command:
+To generate the REST server that invokes the assets and transactions in the business network, use the `composer-rest-server` command below to run the REST server using port 5000 (feel free to change the port number):
 ```sh
-composer-rest-server -c admin@cit_blockchain -n always -w true
+composer-rest-server -c admin@cit-blockchain-network -n always -w true -p 5000
 ```
