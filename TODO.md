@@ -21,8 +21,8 @@
 - [x] Student can READ their own grades stored in the grade registry.
 - [x] Student can READ the courses stored in the course registry.
 - [x] Student can READ the modules stored in the module registry.
-- [ ] Student can READ EnrollStudent transaction related to them.
-- [ ] Student can READ AssignGrade transactions related to them.
+- [x] Student can READ EnrollStudent transaction related to them.
+- [x] Student can READ AssignGrade transactions related to them.
 
 ### Verifier
 - [x] Verifier can READ the students stored in the student registry.
@@ -34,7 +34,13 @@
 - [x] Verifier can READ AssignGrade transactions.
 
 ### Queries
-
-
+- [x] SELECT all students.
+- [x] SELECT a student based on the student number.
+- [x] SELECT all courses.
+- [x] SELECT a course based on the course code.
+- [x] SELECT all modules.
+- [x] SELECT a module based on the module CRN.
+- [ ] SELECT all grades based on the student number.
+- [ ] SELECT all grades of a student on a given stage.
 
 Go back to the main [README](README.md) file.

@@ -84,6 +84,24 @@ rule StudentIssuer {
   action: ALLOW
 }
 
+rule StudentAssignGrade {
+  description: "Grant students READ access to AssignGrade transactions related to them"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.grade.AssignGrade"
+  condition: (p.getIdentifier() == r.studentNumber)
+  action: ALLOW
+}
+
+rule StudentEnrollment {
+  description: "Grant students READ access to the enrollment transaction related to them"
+  participant(p): "ie.cit.blockchain.participant.Student"
+  operation: READ
+  resource(r): "ie.cit.blockchain.course.EnrollStudent"
+  condition: (p.getIdentifier() == r.studentNumber)
+  action: ALLOW
+}
+
 /*** Verifier Permissions ***/
 
 rule VerifierStudents {
@@ -119,7 +137,7 @@ rule VerifierModules {
 }
 
 rule VerifierProfile {
-  description: "Grant verifier READ access to their profile"
+  description: "Grant verifiers READ access to their profile"
   participant(p): "ie.cit.blockchain.participant.Verifier"
   operation: READ
   resource(r): "ie.cit.blockchain.participant.Verifier"
@@ -128,7 +146,7 @@ rule VerifierProfile {
 }
 
 rule VerifierIssuer {
-  description: "Grant verifier READ access to the issuer registry"
+  description: "Grant verifiers READ access to the issuer registry"
   participant: "ie.cit.blockchain.participant.Verifier"
   operation: READ
   resource: "ie.cit.blockchain.participant.Issuer"
@@ -136,7 +154,7 @@ rule VerifierIssuer {
 }
 
 rule VerifierAssignGrade {
-  description: "Grant verifier READ access to the AssignGrade transactions"
+  description: "Grant verifiers READ access to the AssignGrade transactions"
   participant: "ie.cit.blockchain.participant.Verifier"
   operation: READ
   resource: "ie.cit.blockchain.grade.AssignGrade"
@@ -144,7 +162,7 @@ rule VerifierAssignGrade {
 }
 
 rule VerifierEnrollStudent {
-  description: "Grant verifier READ access to the EnrollStudent transactions"
+  description: "Grant verifiers READ access to the EnrollStudent transactions"
   participant: "ie.cit.blockchain.participant.Verifier"
   operation: READ
   resource: "ie.cit.blockchain.course.EnrollStudent"
