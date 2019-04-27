@@ -52,5 +52,5 @@ query selectGradesByStudentOnStage {
   description: "Select all the grades assigned to a student by stage"
   statement:
     SELECT ie.cit.blockchain.grade.Grade
-      WHERE ((student == _$studentNumber) AND (module.stage == _$stage))
+      WHERE ((student == _$studentNumber) AND (module.deliveries.stage == _$stage))
 }

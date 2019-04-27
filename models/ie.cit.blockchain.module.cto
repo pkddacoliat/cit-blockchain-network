@@ -1,16 +1,23 @@
 namespace ie.cit.blockchain.module
 
+import ie.cit.blockchain.course.Course
+
 asset Module identified by crn {
   o String crn
   o String moduleCode
   o String title
   o Double credits
   o Level Level
-  o Integer stage		range = [1, 4]
-  o Integer semester	range = [1, 8]
+  o Delivery[] deliveries
 }
 
 enum Level {
   o FUNDAMENTAL
   o ADVANCED
+}
+
+concept Delivery {
+  --> Course course
+  o Integer stage		range = [1, 4]
+  o Integer semester	range = [1, 8]
 }
