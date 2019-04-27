@@ -97,26 +97,26 @@ Submit a `AssignGrade` transaction:
 ```
 
 ## 3. Deploy BNA to local Fabric:
-To deploy the business network archive to the Hyperledger Fabric, use the following commands:
+To deploy the business network archive to the Hyperledger Fabric, use the `deploy_network.sh` script. If you want to do it manually, type the following commands:
 
 Install the business network:
 ```sh
-composer network install -a cit-blockchain-network.bna -c PeerAdmin@hlfv1
+composer network install -c PeerAdmin@hlfv1 -a ./dist/cit-blockchain-network.bna
 ```
 
 Start the business network:
 ```sh
-composer network start -c PeerAdmin@hlfv1 -n cit-blockchain-network -V 0.0.1 -A admin -S adminpw
+composer network start -c PeerAdmin@hlfv1 -n cit-blockchain-network -V 0.0.1 -A admin -S adminpw -f ./dist/admin@cit-blockchain-network.card
 ```
 
 A network administrator card should be generated in the `dist` folder. Import the card to the network:
 ```sh
-composer card import -f admin@cit-blockchain-network.card 
+composer card import -f ./dist/admin@cit-blockchain-network.card
 ```
 
 Check that the business network has been deployed successfully by using the ping command:
 ```sh
-composer network ping -c admin@cit-blockchain-network
+composer network ping -c admin@cit-blockchain-network  
 ```
 
 ## 4. Generate REST server
