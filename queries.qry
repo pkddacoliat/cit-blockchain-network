@@ -54,3 +54,10 @@ query selectGradesByStudentOnStage {
     SELECT ie.cit.blockchain.grade.Grade
       WHERE ((student == _$studentNumber) AND (module.deliveries.stage == _$stage))
 }
+
+query selectEnrollmentOfStudent {
+  description: "Select the transaction related to the enrollment of a student"
+  statement:
+  	SELECT ie.cit.blockchain.course.EnrollStudent
+  		WHERE (studentNumber == _$studentNumber)
+}

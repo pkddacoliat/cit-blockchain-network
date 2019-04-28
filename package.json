@@ -3,7 +3,7 @@
     "composer": "^0.20.7"
   },
   "name": "cit-blockchain-network",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A private blockchain network for storing academic records created using Hyperledger Composer.",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/cit-blockchain-network.bna",
