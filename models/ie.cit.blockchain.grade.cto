@@ -5,7 +5,12 @@ import ie.cit.blockchain.participant.Student
 
 asset Grade identified by gradeId {
   o String gradeId
-  --> Module module
+  o Integer stage
+  o Integer semester
+  o String crn
+  o String moduleCode
+  o String courseTitle
+  o Double creditsEarned
   --> Student student
   o Double finalGrade   	range = [0.00, 100.00]
 }

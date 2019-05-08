@@ -48,13 +48,6 @@ query selectGradesByStudent {
       WHERE (student == _$studentNumber)
 }
 
-query selectGradesByStudentOnStage {
-  description: "Select all the grades assigned to a student by stage"
-  statement:
-    SELECT ie.cit.blockchain.grade.Grade
-      WHERE ((student == _$studentNumber) AND (module.deliveries.stage == _$stage))
-}
-
 query selectEnrollmentHistoryOfStudent {
   description: "Select the transaction related to the enrollment of a student"
   statement:
